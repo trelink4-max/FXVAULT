@@ -337,11 +337,16 @@
     });
     renderLogViewer();
 
-    var v = db._readJson ? null : null;
-    var versionInfo = window.__fxVersionInfo || {};
-    els.aboutText.textContent = "FXVault " + (versionInfo.currentVersion || "0.1.0-phase1") +
-      ". Phase 1 engine: search, categories, favorites, settings, logging, scripted preset apply, " +
-      "auto adjustment-layer creation, and asset validation.";
+    var versionInfo = {};
+    try {
+      var fsV = require("fs"), pathV = require("path");
+      var root = resolveExtensionRoot();
+      versionInfo = JSON.parse(fsV.readFileSync(pathV.join(root, "data", "version.json"), "utf8"));
+    } catch (e) {
+      if (window.FXLogger) FXLogger.warn("Could not read version.json for About text", { error: String(e) });
+    }
+    els.aboutText.textContent = "FXVault " + (versionInfo.currentVersion || "unknown version") +
+      ". " + db.getEffects().length + " effects across " + db.getCategories().length + " categories.";
   }
 
   function renderLogViewer() {
