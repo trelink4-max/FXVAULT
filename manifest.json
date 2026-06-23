@@ -1,0 +1,101 @@
+{
+  "generatedFor": "0.5.0-phase2",
+  "files": [
+    {
+      "path": "CSXS/manifest.xml",
+      "url": "https://raw.githubusercontent.com/trelink4-max/FXVAULT/main/CSXS/manifest.xml"
+    },
+    {
+      "path": "README.md",
+      "url": "https://raw.githubusercontent.com/trelink4-max/FXVAULT/main/README.md"
+    },
+    {
+      "path": "css/style.css",
+      "url": "https://raw.githubusercontent.com/trelink4-max/FXVAULT/main/css/style.css"
+    },
+    {
+      "path": "data/effects-index.json",
+      "url": "https://raw.githubusercontent.com/trelink4-max/FXVAULT/main/data/effects-index.json"
+    },
+    {
+      "path": "data/version.json",
+      "url": "https://raw.githubusercontent.com/trelink4-max/FXVAULT/main/data/version.json"
+    },
+    {
+      "path": "docs/ARCHITECTURE.md",
+      "url": "https://raw.githubusercontent.com/trelink4-max/FXVAULT/main/docs/ARCHITECTURE.md"
+    },
+    {
+      "path": "docs/INSTALL.md",
+      "url": "https://raw.githubusercontent.com/trelink4-max/FXVAULT/main/docs/INSTALL.md"
+    },
+    {
+      "path": "docs/ROADMAP.md",
+      "url": "https://raw.githubusercontent.com/trelink4-max/FXVAULT/main/docs/ROADMAP.md"
+    },
+    {
+      "path": "index.html",
+      "url": "https://raw.githubusercontent.com/trelink4-max/FXVAULT/main/index.html"
+    },
+    {
+      "path": "js/CSInterface.js",
+      "url": "https://raw.githubusercontent.com/trelink4-max/FXVAULT/main/js/CSInterface.js"
+    },
+    {
+      "path": "js/autoupdater.js",
+      "url": "https://raw.githubusercontent.com/trelink4-max/FXVAULT/main/js/autoupdater.js"
+    },
+    {
+      "path": "js/db.js",
+      "url": "https://raw.githubusercontent.com/trelink4-max/FXVAULT/main/js/db.js"
+    },
+    {
+      "path": "js/logger.js",
+      "url": "https://raw.githubusercontent.com/trelink4-max/FXVAULT/main/js/logger.js"
+    },
+    {
+      "path": "js/main.js",
+      "url": "https://raw.githubusercontent.com/trelink4-max/FXVAULT/main/js/main.js"
+    },
+    {
+      "path": "js/search.js",
+      "url": "https://raw.githubusercontent.com/trelink4-max/FXVAULT/main/js/search.js"
+    },
+    {
+      "path": "js/settings.js",
+      "url": "https://raw.githubusercontent.com/trelink4-max/FXVAULT/main/js/settings.js"
+    },
+    {
+      "path": "js/updater.js",
+      "url": "https://raw.githubusercontent.com/trelink4-max/FXVAULT/main/js/updater.js"
+    },
+    {
+      "path": "jsx/hostscript.jsx",
+      "url": "https://raw.githubusercontent.com/trelink4-max/FXVAULT/main/jsx/hostscript.jsx"
+    },
+    {
+      "path": "jsx/json2-polyfill.jsx",
+      "url": "https://raw.githubusercontent.com/trelink4-max/FXVAULT/main/jsx/json2-polyfill.jsx"
+    },
+    {
+      "path": "scripts/build.sh",
+      "url": "https://raw.githubusercontent.com/trelink4-max/FXVAULT/main/scripts/build.sh"
+    },
+    {
+      "path": "scripts/install.bat",
+      "url": "https://raw.githubusercontent.com/trelink4-max/FXVAULT/main/scripts/install.bat"
+    },
+    {
+      "path": "scripts/install.sh",
+      "url": "https://raw.githubusercontent.com/trelink4-max/FXVAULT/main/scripts/install.sh"
+    },
+    {
+      "path": "tools/PreviewGenerator.jsx",
+      "url": "https://raw.githubusercontent.com/trelink4-max/FXVAULT/main/tools/PreviewGenerator.jsx"
+    },
+    {
+      "path": "tools/pending-presets/README.md",
+      "url": "https://raw.githubusercontent.com/trelink4-max/FXVAULT/main/tools/pending-presets/README.md"
+    }
+  ]
+}

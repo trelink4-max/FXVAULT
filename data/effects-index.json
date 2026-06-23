@@ -1,0 +1,2992 @@
+{
+  "schemaVersion": 1,
+  "effects": [
+    {
+      "id": "white-flash",
+      "name": "White Flash",
+      "category": "Transitions",
+      "tags": [
+        "flash",
+        "transition",
+        "cut",
+        "white",
+        "impact"
+      ],
+      "description": "Punchy full-white flash transition. Drop on a cut for a hard, energetic break between shots.",
+      "presetType": "scripted",
+      "ffxPath": null,
+      "adjustmentLayer": {
+        "durationSeconds": 0.5,
+        "name": "White Flash"
+      },
+      "effectChain": [
+        {
+          "matchName": "ADBE Fill",
+          "displayName": "Fill",
+          "properties": [
+            {
+              "name": "Color",
+              "value": [
+                1,
+                1,
+                1
+              ]
+            }
+          ]
+        }
+      ],
+      "transformKeyframes": {
+        "Opacity": [
+          {
+            "timeOffset": 0,
+            "value": 0
+          },
+          {
+            "timeOffset": 0.08,
+            "value": 100
+          },
+          {
+            "timeOffset": 0.5,
+            "value": 0
+          }
+        ]
+      },
+      "thumbnail": "assets/effects/white-flash/thumbnail.png",
+      "preview": "assets/effects/white-flash/preview.mp4",
+      "favorited": false,
+      "version": "1.0.0"
+    },
+    {
+      "id": "rgb-split",
+      "name": "RGB Split",
+      "category": "Glitches",
+      "tags": [
+        "glitch",
+        "rgb",
+        "chromatic",
+        "split",
+        "digital"
+      ],
+      "description": "Animated chromatic channel split for a glitchy, digital-error look.",
+      "presetType": "scripted",
+      "ffxPath": null,
+      "adjustmentLayer": {
+        "durationSeconds": 1,
+        "name": "RGB Split"
+      },
+      "effectChain": [
+        {
+          "matchName": "ADBE Shift Channels",
+          "displayName": "Shift Channels",
+          "properties": [
+            {
+              "name": "Take Red From",
+              "value": 2
+            },
+            {
+              "name": "Take Green From",
+              "value": 3
+            },
+            {
+              "name": "Take Blue From",
+              "value": 4
+            }
+          ]
+        }
+      ],
+      "implementationNote": "Phase 1 sets static channel-source offsets and adds a position wiggle on the adjustment layer for visible motion. Animated per-frame channel offsets are planned for Phase 2 (see ROADMAP.md).",
+      "transformExpressions": {
+        "Position": "wiggle(6, 8)"
+      },
+      "thumbnail": "assets/effects/rgb-split/thumbnail.png",
+      "preview": "assets/effects/rgb-split/preview.mp4",
+      "favorited": false,
+      "version": "1.0.0"
+    },
+    {
+      "id": "micro-shake",
+      "name": "Micro Shake",
+      "category": "Shakes",
+      "tags": [
+        "shake",
+        "subtle",
+        "handheld",
+        "micro",
+        "energy"
+      ],
+      "description": "Subtle high-frequency shake for adding low-key energy without distracting from the shot.",
+      "presetType": "scripted",
+      "ffxPath": null,
+      "adjustmentLayer": {
+        "durationSeconds": 2,
+        "name": "Micro Shake"
+      },
+      "effectChain": [
+        {
+          "matchName": "ADBE Geometry2",
+          "displayName": "Transform",
+          "properties": [
+            {
+              "name": "Position",
+              "expression": "wiggle(15, 3)"
+            },
+            {
+              "name": "Rotation",
+              "expression": "wiggle(15, 0.4)"
+            }
+          ]
+        }
+      ],
+      "thumbnail": "assets/effects/micro-shake/thumbnail.png",
+      "preview": "assets/effects/micro-shake/preview.mp4",
+      "favorited": false,
+      "version": "1.0.0"
+    },
+    {
+      "id": "crt-tv",
+      "name": "CRT TV",
+      "category": "CRT",
+      "tags": [
+        "crt",
+        "retro",
+        "tv",
+        "scanline",
+        "analog"
+      ],
+      "description": "Classic CRT television look: crushed contrast, desaturated color and fine grain.",
+      "presetType": "scripted",
+      "ffxPath": null,
+      "adjustmentLayer": {
+        "durationSeconds": 2,
+        "name": "CRT TV"
+      },
+      "effectChain": [
+        {
+          "matchName": "ADBE Brightness & Contrast 2",
+          "displayName": "Brightness & Contrast",
+          "properties": [
+            {
+              "name": "Brightness",
+              "value": -5
+            },
+            {
+              "name": "Contrast",
+              "value": 35
+            }
+          ]
+        },
+        {
+          "matchName": "ADBE HUE SATURATION",
+          "displayName": "Hue/Saturation",
+          "properties": [
+            {
+              "name": "Master Saturation",
+              "value": -35
+            },
+            {
+              "name": "Master Lightness",
+              "value": -5
+            }
+          ]
+        },
+        {
+          "matchName": "ADBE Noise",
+          "displayName": "Noise",
+          "properties": [
+            {
+              "name": "Amount of Noise",
+              "value": 0.08
+            }
+          ]
+        },
+        {
+          "matchName": "ADBE Tint",
+          "displayName": "Tint",
+          "properties": [
+            {
+              "name": "Amount to Tint",
+              "value": 20
+            }
+          ]
+        }
+      ],
+      "thumbnail": "assets/effects/crt-tv/thumbnail.png",
+      "preview": "assets/effects/crt-tv/preview.mp4",
+      "favorited": false,
+      "version": "1.0.0"
+    },
+    {
+      "id": "blue-night",
+      "name": "Blue Night",
+      "category": "Color",
+      "tags": [
+        "color",
+        "grade",
+        "blue",
+        "night",
+        "cool",
+        "cinematic"
+      ],
+      "description": "Cool, desaturated night-time color grade with lifted blue shadows.",
+      "presetType": "scripted",
+      "ffxPath": null,
+      "adjustmentLayer": {
+        "durationSeconds": 2,
+        "name": "Blue Night"
+      },
+      "effectChain": [
+        {
+          "matchName": "ADBE Color Balance (HLS)",
+          "displayName": "Color Balance (HLS)",
+          "properties": [
+            {
+              "name": "Hue",
+              "value": 220
+            },
+            {
+              "name": "Lightness",
+              "value": -8
+            },
+            {
+              "name": "Saturation",
+              "value": -10
+            }
+          ]
+        },
+        {
+          "matchName": "ADBE HUE SATURATION",
+          "displayName": "Hue/Saturation",
+          "properties": [
+            {
+              "name": "Master Saturation",
+              "value": -20
+            }
+          ]
+        },
+        {
+          "matchName": "ADBE Curves",
+          "displayName": "Curves",
+          "properties": []
+        }
+      ],
+      "thumbnail": "assets/effects/blue-night/thumbnail.png",
+      "preview": "assets/effects/blue-night/preview.mp4",
+      "favorited": false,
+      "version": "1.0.0"
+    },
+    {
+      "id": "split-2-vertical",
+      "name": "Split 2 Vertical",
+      "category": "Split Screen",
+      "tags": [
+        "split",
+        "screen",
+        "layout",
+        "grid",
+        "multi"
+      ],
+      "description": "Two side-by-side vertical columns. Select 2 layers, top-to-bottom = left-to-right. Select exactly 2 layers in the timeline first, then double-click.",
+      "presetType": "layout",
+      "layoutParams": {
+        "divisions": 2,
+        "orientation": "vertical"
+      },
+      "thumbnail": "assets/effects/split-2-vertical/thumbnail.png",
+      "preview": null,
+      "favorited": false,
+      "version": "1.0.0"
+    },
+    {
+      "id": "split-2-horizontal",
+      "name": "Split 2 Horizontal",
+      "category": "Split Screen",
+      "tags": [
+        "split",
+        "screen",
+        "layout",
+        "grid",
+        "multi"
+      ],
+      "description": "Two stacked horizontal rows. Select 2 layers, top-to-bottom = top-to-bottom. Select exactly 2 layers in the timeline first, then double-click.",
+      "presetType": "layout",
+      "layoutParams": {
+        "divisions": 2,
+        "orientation": "horizontal"
+      },
+      "thumbnail": "assets/effects/split-2-horizontal/thumbnail.png",
+      "preview": null,
+      "favorited": false,
+      "version": "1.0.0"
+    },
+    {
+      "id": "split-3-vertical",
+      "name": "Split 3 Vertical",
+      "category": "Split Screen",
+      "tags": [
+        "split",
+        "screen",
+        "layout",
+        "grid",
+        "multi"
+      ],
+      "description": "Three side-by-side vertical columns, like the classic triptych edit. Select exactly 3 layers in the timeline first, then double-click.",
+      "presetType": "layout",
+      "layoutParams": {
+        "divisions": 3,
+        "orientation": "vertical"
+      },
+      "thumbnail": "assets/effects/split-3-vertical/thumbnail.png",
+      "preview": null,
+      "favorited": false,
+      "version": "1.0.0"
+    },
+    {
+      "id": "split-3-horizontal",
+      "name": "Split 3 Horizontal",
+      "category": "Split Screen",
+      "tags": [
+        "split",
+        "screen",
+        "layout",
+        "grid",
+        "multi"
+      ],
+      "description": "Three stacked horizontal rows. Select exactly 3 layers in the timeline first, then double-click.",
+      "presetType": "layout",
+      "layoutParams": {
+        "divisions": 3,
+        "orientation": "horizontal"
+      },
+      "thumbnail": "assets/effects/split-3-horizontal/thumbnail.png",
+      "preview": null,
+      "favorited": false,
+      "version": "1.0.0"
+    },
+    {
+      "id": "split-4-grid",
+      "name": "Split 4 Grid",
+      "category": "Split Screen",
+      "tags": [
+        "split",
+        "screen",
+        "layout",
+        "grid",
+        "multi"
+      ],
+      "description": "2x2 grid of four panels. Select exactly 4 layers in the timeline first, then double-click.",
+      "presetType": "layout",
+      "layoutParams": {
+        "divisions": 4,
+        "orientation": "grid"
+      },
+      "thumbnail": "assets/effects/split-4-grid/thumbnail.png",
+      "preview": null,
+      "favorited": false,
+      "version": "1.0.0"
+    },
+    {
+      "id": "reverse-clip",
+      "name": "Reverse Clip",
+      "category": "Reverse",
+      "tags": [
+        "reverse",
+        "time",
+        "playback"
+      ],
+      "description": "Reverses the selected layer's playback direction using AE's native Time-Reverse Layer command. Select a layer first, then double-click.",
+      "presetType": "timeremap",
+      "timeRemapParams": {
+        "action": "reverse"
+      },
+      "thumbnail": "assets/effects/reverse-clip/thumbnail.png",
+      "preview": null,
+      "favorited": false,
+      "version": "1.0.0"
+    },
+    {
+      "id": "speed-ramp-slow-fast",
+      "name": "Speed Ramp (Slow to Fast)",
+      "category": "Speed Ramps",
+      "tags": [
+        "speed",
+        "ramp",
+        "time remap",
+        "build"
+      ],
+      "description": "Classic build-up speed ramp - starts slow, accelerates into full speed. Select a layer first, then double-click.",
+      "presetType": "timeremap",
+      "timeRemapParams": {
+        "action": "speedramp",
+        "style": "slow-fast"
+      },
+      "thumbnail": "assets/effects/speed-ramp-slow-fast/thumbnail.png",
+      "preview": null,
+      "favorited": false,
+      "version": "1.0.0"
+    },
+    {
+      "id": "speed-ramp-fast-slow",
+      "name": "Speed Ramp (Fast to Slow)",
+      "category": "Speed Ramps",
+      "tags": [
+        "speed",
+        "ramp",
+        "time remap",
+        "landing"
+      ],
+      "description": "Impact-landing speed ramp - starts fast, eases into a slow finish. Select a layer first, then double-click.",
+      "presetType": "timeremap",
+      "timeRemapParams": {
+        "action": "speedramp",
+        "style": "fast-slow"
+      },
+      "thumbnail": "assets/effects/speed-ramp-fast-slow/thumbnail.png",
+      "preview": null,
+      "favorited": false,
+      "version": "1.0.0"
+    },
+    {
+      "id": "speed-ramp-freeze-punch",
+      "name": "Speed Ramp (Freeze Punch)",
+      "category": "Speed Ramps",
+      "tags": [
+        "speed",
+        "ramp",
+        "time remap",
+        "freeze"
+      ],
+      "description": "Holds on a frame, then punches into full speed - classic 'freeze then go' edit move. Select a layer first, then double-click.",
+      "presetType": "timeremap",
+      "timeRemapParams": {
+        "action": "speedramp",
+        "style": "freeze-punch"
+      },
+      "thumbnail": "assets/effects/speed-ramp-freeze-punch/thumbnail.png",
+      "preview": null,
+      "favorited": false,
+      "version": "1.0.0"
+    },
+    {
+      "id": "zoom-in-sustain",
+      "name": "Zoom In Sustain",
+      "category": "Zooms",
+      "tags": [
+        "zoom",
+        "in",
+        "push",
+        "sustained"
+      ],
+      "description": "Sustained push-in zoom that holds rather than snapping back - good for building tension into a moment.",
+      "presetType": "scripted",
+      "adjustmentLayer": {
+        "durationSeconds": 1,
+        "name": "Zoom In Sustain"
+      },
+      "effectChain": [
+        {
+          "matchName": "ADBE Geometry2",
+          "displayName": "Transform",
+          "properties": [
+            {
+              "name": "Scale Height",
+              "keyframes": [
+                {
+                  "timeOffset": 0,
+                  "value": 100
+                },
+                {
+                  "timeOffset": 1,
+                  "value": 145
+                }
+              ]
+            },
+            {
+              "name": "Scale Width",
+              "keyframes": [
+                {
+                  "timeOffset": 0,
+                  "value": 100
+                },
+                {
+                  "timeOffset": 1,
+                  "value": 145
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "version": "1.0.0",
+      "thumbnail": "assets/effects/zoom-in-sustain/thumbnail.png",
+      "preview": "assets/effects/zoom-in-sustain/preview.mp4",
+      "favorited": false,
+      "ffxPath": null
+    },
+    {
+      "id": "zoom-out-push",
+      "name": "Zoom Out Push",
+      "category": "Zooms",
+      "tags": [
+        "zoom",
+        "out",
+        "pull",
+        "reveal"
+      ],
+      "description": "Starts zoomed in and pulls back to normal - a reveal-style zoom out.",
+      "presetType": "scripted",
+      "adjustmentLayer": {
+        "durationSeconds": 1,
+        "name": "Zoom Out Push"
+      },
+      "effectChain": [
+        {
+          "matchName": "ADBE Geometry2",
+          "displayName": "Transform",
+          "properties": [
+            {
+              "name": "Scale Height",
+              "keyframes": [
+                {
+                  "timeOffset": 0,
+                  "value": 145
+                },
+                {
+                  "timeOffset": 1,
+                  "value": 100
+                }
+              ]
+            },
+            {
+              "name": "Scale Width",
+              "keyframes": [
+                {
+                  "timeOffset": 0,
+                  "value": 145
+                },
+                {
+                  "timeOffset": 1,
+                  "value": 100
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "version": "1.0.0",
+      "thumbnail": "assets/effects/zoom-out-push/thumbnail.png",
+      "preview": "assets/effects/zoom-out-push/preview.mp4",
+      "favorited": false,
+      "ffxPath": null
+    },
+    {
+      "id": "zoom-blur-whip",
+      "name": "Zoom Blur Whip",
+      "category": "Zooms",
+      "tags": [
+        "zoom",
+        "blur",
+        "whip",
+        "fast"
+      ],
+      "description": "Fast zoom punch combined with a blur pulse for a whip-zoom transition feel.",
+      "presetType": "scripted",
+      "adjustmentLayer": {
+        "durationSeconds": 0.4,
+        "name": "Zoom Blur Whip"
+      },
+      "effectChain": [
+        {
+          "matchName": "ADBE Geometry2",
+          "displayName": "Transform",
+          "properties": [
+            {
+              "name": "Scale Height",
+              "keyframes": [
+                {
+                  "timeOffset": 0,
+                  "value": 100
+                },
+                {
+                  "timeOffset": 0.15,
+                  "value": 220
+                },
+                {
+                  "timeOffset": 0.4,
+                  "value": 100
+                }
+              ]
+            },
+            {
+              "name": "Scale Width",
+              "keyframes": [
+                {
+                  "timeOffset": 0,
+                  "value": 100
+                },
+                {
+                  "timeOffset": 0.15,
+                  "value": 220
+                },
+                {
+                  "timeOffset": 0.4,
+                  "value": 100
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "matchName": "ADBE Gaussian Blur 2",
+          "displayName": "Gaussian Blur",
+          "properties": [
+            {
+              "name": "Blurriness",
+              "keyframes": [
+                {
+                  "timeOffset": 0,
+                  "value": 0
+                },
+                {
+                  "timeOffset": 0.15,
+                  "value": 60
+                },
+                {
+                  "timeOffset": 0.4,
+                  "value": 0
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "version": "1.0.0",
+      "thumbnail": "assets/effects/zoom-blur-whip/thumbnail.png",
+      "preview": "assets/effects/zoom-blur-whip/preview.mp4",
+      "favorited": false,
+      "ffxPath": null
+    },
+    {
+      "id": "zoom-shake-combo",
+      "name": "Zoom Shake Combo",
+      "category": "Zooms",
+      "tags": [
+        "zoom",
+        "shake",
+        "combo",
+        "energy"
+      ],
+      "description": "Zoom punch combined with a quick shake for an energetic hybrid hit.",
+      "presetType": "scripted",
+      "adjustmentLayer": {
+        "durationSeconds": 0.5,
+        "name": "Zoom Shake Combo"
+      },
+      "effectChain": [
+        {
+          "matchName": "ADBE Geometry2",
+          "displayName": "Transform",
+          "properties": [
+            {
+              "name": "Scale Height",
+              "keyframes": [
+                {
+                  "timeOffset": 0,
+                  "value": 100
+                },
+                {
+                  "timeOffset": 0.12,
+                  "value": 160
+                },
+                {
+                  "timeOffset": 0.5,
+                  "value": 100
+                }
+              ]
+            },
+            {
+              "name": "Scale Width",
+              "keyframes": [
+                {
+                  "timeOffset": 0,
+                  "value": 100
+                },
+                {
+                  "timeOffset": 0.12,
+                  "value": 160
+                },
+                {
+                  "timeOffset": 0.5,
+                  "value": 100
+                }
+              ]
+            },
+            {
+              "name": "Position",
+              "expression": "wiggle(12, 20)"
+            }
+          ]
+        }
+      ],
+      "version": "1.0.0",
+      "thumbnail": "assets/effects/zoom-shake-combo/thumbnail.png",
+      "preview": "assets/effects/zoom-shake-combo/preview.mp4",
+      "favorited": false,
+      "ffxPath": null
+    },
+    {
+      "id": "handheld-drift",
+      "name": "Handheld Drift",
+      "category": "Camera Movement",
+      "tags": [
+        "handheld",
+        "drift",
+        "subtle",
+        "realistic"
+      ],
+      "description": "Slow, low-amplitude drift simulating a handheld camera - much gentler and slower than the Shakes category.",
+      "presetType": "scripted",
+      "adjustmentLayer": {
+        "durationSeconds": 3,
+        "name": "Handheld Drift"
+      },
+      "effectChain": [
+        {
+          "matchName": "ADBE Geometry2",
+          "displayName": "Transform",
+          "properties": [
+            {
+              "name": "Position",
+              "expression": "wiggle(1.5, 6)"
+            },
+            {
+              "name": "Rotation",
+              "expression": "wiggle(1.5, 0.3)"
+            }
+          ]
+        }
+      ],
+      "version": "1.0.0",
+      "thumbnail": "assets/effects/handheld-drift/thumbnail.png",
+      "preview": "assets/effects/handheld-drift/preview.mp4",
+      "favorited": false,
+      "ffxPath": null
+    },
+    {
+      "id": "slow-push-in",
+      "name": "Slow Push In",
+      "category": "Camera Movement",
+      "tags": [
+        "push",
+        "slow",
+        "cinematic",
+        "dolly"
+      ],
+      "description": "Gradual, cinematic push-in over the full duration - simulates a slow dolly/zoom rather than a quick punch.",
+      "presetType": "scripted",
+      "adjustmentLayer": {
+        "durationSeconds": 3,
+        "name": "Slow Push In"
+      },
+      "effectChain": [
+        {
+          "matchName": "ADBE Geometry2",
+          "displayName": "Transform",
+          "properties": [
+            {
+              "name": "Scale Height",
+              "keyframes": [
+                {
+                  "timeOffset": 0,
+                  "value": 100
+                },
+                {
+                  "timeOffset": 3,
+                  "value": 112
+                }
+              ]
+            },
+            {
+              "name": "Scale Width",
+              "keyframes": [
+                {
+                  "timeOffset": 0,
+                  "value": 100
+                },
+                {
+                  "timeOffset": 3,
+                  "value": 112
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "version": "1.0.0",
+      "thumbnail": "assets/effects/slow-push-in/thumbnail.png",
+      "preview": "assets/effects/slow-push-in/preview.mp4",
+      "favorited": false,
+      "ffxPath": null
+    },
+    {
+      "id": "pan-drift",
+      "name": "Pan Drift",
+      "category": "Camera Movement",
+      "tags": [
+        "pan",
+        "drift",
+        "slow",
+        "lateral"
+      ],
+      "description": "Slow lateral drift simulating a gentle pan across the frame.",
+      "presetType": "scripted",
+      "adjustmentLayer": {
+        "durationSeconds": 3,
+        "name": "Pan Drift"
+      },
+      "effectChain": [
+        {
+          "matchName": "ADBE Geometry2",
+          "displayName": "Transform",
+          "properties": [
+            {
+              "name": "Position",
+              "expression": "[value[0] + (time/thisLayer.outPoint)*40, value[1]]"
+            }
+          ]
+        }
+      ],
+      "version": "1.0.0",
+      "thumbnail": "assets/effects/pan-drift/thumbnail.png",
+      "preview": "assets/effects/pan-drift/preview.mp4",
+      "favorited": false,
+      "ffxPath": null
+    },
+    {
+      "id": "whip-pan",
+      "name": "Whip Pan",
+      "category": "Camera Movement",
+      "tags": [
+        "whip",
+        "pan",
+        "snap",
+        "fast"
+      ],
+      "description": "Fast snap-pan with a blur pulse timed to the motion - classic whip-pan transition feel.",
+      "presetType": "scripted",
+      "adjustmentLayer": {
+        "durationSeconds": 0.35,
+        "name": "Whip Pan"
+      },
+      "effectChain": [
+        {
+          "matchName": "ADBE Geometry2",
+          "displayName": "Transform",
+          "properties": [
+            {
+              "name": "Position",
+              "expression": "wiggle(3, thisComp.width*0.4)"
+            }
+          ]
+        },
+        {
+          "matchName": "ADBE Gaussian Blur 2",
+          "displayName": "Gaussian Blur",
+          "properties": [
+            {
+              "name": "Blurriness",
+              "keyframes": [
+                {
+                  "timeOffset": 0,
+                  "value": 0
+                },
+                {
+                  "timeOffset": 0.15,
+                  "value": 90
+                },
+                {
+                  "timeOffset": 0.35,
+                  "value": 0
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "version": "1.0.0",
+      "thumbnail": "assets/effects/whip-pan/thumbnail.png",
+      "preview": "assets/effects/whip-pan/preview.mp4",
+      "favorited": false,
+      "ffxPath": null
+    },
+    {
+      "id": "classic-bw",
+      "name": "Classic B&W",
+      "category": "Black & White",
+      "tags": [
+        "black and white",
+        "bw",
+        "monochrome",
+        "classic"
+      ],
+      "description": "Clean, full desaturation with gentle contrast - a neutral classic black and white look.",
+      "presetType": "scripted",
+      "adjustmentLayer": {
+        "durationSeconds": 2,
+        "name": "Classic B&W"
+      },
+      "effectChain": [
+        {
+          "matchName": "ADBE HUE SATURATION",
+          "displayName": "Hue/Saturation",
+          "properties": [
+            {
+              "name": "Master Saturation",
+              "value": -100
+            }
+          ]
+        },
+        {
+          "matchName": "ADBE Brightness & Contrast 2",
+          "displayName": "Brightness & Contrast",
+          "properties": [
+            {
+              "name": "Brightness",
+              "value": 0
+            },
+            {
+              "name": "Contrast",
+              "value": 12
+            }
+          ]
+        }
+      ],
+      "version": "1.0.0",
+      "thumbnail": "assets/effects/classic-bw/thumbnail.png",
+      "preview": "assets/effects/classic-bw/preview.mp4",
+      "favorited": false,
+      "ffxPath": null
+    },
+    {
+      "id": "high-contrast-bw",
+      "name": "High Contrast B&W",
+      "category": "Black & White",
+      "tags": [
+        "black and white",
+        "bw",
+        "contrast",
+        "harsh",
+        "dramatic"
+      ],
+      "description": "Harsh, punchy black and white with crushed shadows and bright highlights - dramatic editorial look.",
+      "presetType": "scripted",
+      "adjustmentLayer": {
+        "durationSeconds": 2,
+        "name": "High Contrast B&W"
+      },
+      "effectChain": [
+        {
+          "matchName": "ADBE HUE SATURATION",
+          "displayName": "Hue/Saturation",
+          "properties": [
+            {
+              "name": "Master Saturation",
+              "value": -100
+            }
+          ]
+        },
+        {
+          "matchName": "ADBE Brightness & Contrast 2",
+          "displayName": "Brightness & Contrast",
+          "properties": [
+            {
+              "name": "Brightness",
+              "value": -8
+            },
+            {
+              "name": "Contrast",
+              "value": 55
+            }
+          ]
+        }
+      ],
+      "version": "1.0.0",
+      "thumbnail": "assets/effects/high-contrast-bw/thumbnail.png",
+      "preview": "assets/effects/high-contrast-bw/preview.mp4",
+      "favorited": false,
+      "ffxPath": null
+    },
+    {
+      "id": "faded-bw",
+      "name": "Faded B&W",
+      "category": "Black & White",
+      "tags": [
+        "black and white",
+        "bw",
+        "faded",
+        "film",
+        "vintage"
+      ],
+      "description": "Washed-out, lifted-black film look in monochrome.",
+      "presetType": "scripted",
+      "adjustmentLayer": {
+        "durationSeconds": 2,
+        "name": "Faded B&W"
+      },
+      "effectChain": [
+        {
+          "matchName": "ADBE HUE SATURATION",
+          "displayName": "Hue/Saturation",
+          "properties": [
+            {
+              "name": "Master Saturation",
+              "value": -100
+            }
+          ]
+        },
+        {
+          "matchName": "ADBE Brightness & Contrast 2",
+          "displayName": "Brightness & Contrast",
+          "properties": [
+            {
+              "name": "Brightness",
+              "value": 12
+            },
+            {
+              "name": "Contrast",
+              "value": -18
+            }
+          ]
+        }
+      ],
+      "version": "1.0.0",
+      "thumbnail": "assets/effects/faded-bw/thumbnail.png",
+      "preview": "assets/effects/faded-bw/preview.mp4",
+      "favorited": false,
+      "ffxPath": null
+    },
+    {
+      "id": "noir-bw",
+      "name": "Noir B&W",
+      "category": "Black & White",
+      "tags": [
+        "black and white",
+        "bw",
+        "noir",
+        "moody",
+        "grain"
+      ],
+      "description": "Moody crushed-shadow noir look with film grain.",
+      "presetType": "scripted",
+      "adjustmentLayer": {
+        "durationSeconds": 2,
+        "name": "Noir B&W"
+      },
+      "effectChain": [
+        {
+          "matchName": "ADBE HUE SATURATION",
+          "displayName": "Hue/Saturation",
+          "properties": [
+            {
+              "name": "Master Saturation",
+              "value": -100
+            }
+          ]
+        },
+        {
+          "matchName": "ADBE Brightness & Contrast 2",
+          "displayName": "Brightness & Contrast",
+          "properties": [
+            {
+              "name": "Brightness",
+              "value": -18
+            },
+            {
+              "name": "Contrast",
+              "value": 42
+            }
+          ]
+        },
+        {
+          "matchName": "ADBE Noise",
+          "displayName": "Noise",
+          "properties": [
+            {
+              "name": "Amount of Noise",
+              "value": 0.08
+            }
+          ]
+        }
+      ],
+      "version": "1.0.0",
+      "thumbnail": "assets/effects/noir-bw/thumbnail.png",
+      "preview": "assets/effects/noir-bw/preview.mp4",
+      "favorited": false,
+      "ffxPath": null
+    },
+    {
+      "id": "earthquake-shake",
+      "name": "Earthquake Shake",
+      "category": "Shakes",
+      "tags": [
+        "earthquake",
+        "crazy",
+        "extreme",
+        "sustained",
+        "chaos"
+      ],
+      "description": "Extreme, sustained low-frequency shake with big amplitude - chaos for the full clip rather than a quick hit.",
+      "presetType": "scripted",
+      "adjustmentLayer": {
+        "durationSeconds": 2.5,
+        "name": "Earthquake Shake"
+      },
+      "effectChain": [
+        {
+          "matchName": "ADBE Geometry2",
+          "displayName": "Transform",
+          "properties": [
+            {
+              "name": "Position",
+              "expression": "wiggle(3, 60)"
+            },
+            {
+              "name": "Rotation",
+              "expression": "wiggle(3, 8)"
+            }
+          ]
+        }
+      ],
+      "version": "1.0.0",
+      "thumbnail": "assets/effects/earthquake-shake/thumbnail.png",
+      "preview": "assets/effects/earthquake-shake/preview.mp4",
+      "favorited": false,
+      "ffxPath": null
+    },
+    {
+      "id": "bass-shake",
+      "name": "Bass Shake",
+      "category": "Shakes",
+      "tags": [
+        "bass",
+        "heavy",
+        "beat",
+        "low-end"
+      ],
+      "description": "Punchy low-frequency shake for hitting bass drops - bigger amplitude, slower frequency than Micro Shake.",
+      "presetType": "scripted",
+      "adjustmentLayer": {
+        "durationSeconds": 1,
+        "name": "Bass Shake"
+      },
+      "effectChain": [
+        {
+          "matchName": "ADBE Geometry2",
+          "displayName": "Transform",
+          "properties": [
+            {
+              "name": "Position",
+              "expression": "wiggle(4, 28)"
+            },
+            {
+              "name": "Scale Height",
+              "expression": "wiggle(4, 3) + 100"
+            },
+            {
+              "name": "Scale Width",
+              "expression": "wiggle(4, 3) + 100"
+            }
+          ]
+        }
+      ],
+      "version": "1.0.0",
+      "thumbnail": "assets/effects/bass-shake/thumbnail.png",
+      "preview": "assets/effects/bass-shake/preview.mp4",
+      "favorited": false,
+      "ffxPath": null
+    },
+    {
+      "id": "performance-shake",
+      "name": "Performance Shake",
+      "category": "Shakes",
+      "tags": [
+        "performance",
+        "energy",
+        "medium",
+        "live"
+      ],
+      "description": "Medium-amplitude, medium-frequency shake for energetic performance footage - between Micro Shake and Bass Shake in intensity.",
+      "presetType": "scripted",
+      "adjustmentLayer": {
+        "durationSeconds": 1.5,
+        "name": "Performance Shake"
+      },
+      "effectChain": [
+        {
+          "matchName": "ADBE Geometry2",
+          "displayName": "Transform",
+          "properties": [
+            {
+              "name": "Position",
+              "expression": "wiggle(8, 18)"
+            },
+            {
+              "name": "Rotation",
+              "expression": "wiggle(8, 2)"
+            }
+          ]
+        }
+      ],
+      "version": "1.0.0",
+      "thumbnail": "assets/effects/performance-shake/thumbnail.png",
+      "preview": "assets/effects/performance-shake/preview.mp4",
+      "favorited": false,
+      "ffxPath": null
+    },
+    {
+      "id": "heavy-impact-shake",
+      "name": "Heavy Impact Shake",
+      "category": "Shakes",
+      "tags": [
+        "impact",
+        "heavy",
+        "hit",
+        "explosion"
+      ],
+      "description": "Sharp, large-amplitude shake for a single hard impact moment - short duration, high intensity.",
+      "presetType": "scripted",
+      "adjustmentLayer": {
+        "durationSeconds": 0.6,
+        "name": "Heavy Impact Shake"
+      },
+      "effectChain": [
+        {
+          "matchName": "ADBE Geometry2",
+          "displayName": "Transform",
+          "properties": [
+            {
+              "name": "Position",
+              "expression": "wiggle(20, 45)"
+            },
+            {
+              "name": "Rotation",
+              "expression": "wiggle(20, 6)"
+            },
+            {
+              "name": "Scale Height",
+              "expression": "100 + wiggle(20, 4)"
+            },
+            {
+              "name": "Scale Width",
+              "expression": "100 + wiggle(20, 4)"
+            }
+          ]
+        }
+      ],
+      "version": "1.0.0",
+      "thumbnail": "assets/effects/heavy-impact-shake/thumbnail.png",
+      "preview": "assets/effects/heavy-impact-shake/preview.mp4",
+      "favorited": false,
+      "ffxPath": null
+    },
+    {
+      "id": "strobe-shake",
+      "name": "Strobe Shake",
+      "category": "Shakes",
+      "tags": [
+        "strobe",
+        "crazy",
+        "flicker",
+        "chaotic",
+        "shake"
+      ],
+      "description": "Chaotic shake combined with a rapid opacity strobe - maximum energy, very short burst.",
+      "presetType": "scripted",
+      "adjustmentLayer": {
+        "durationSeconds": 0.6,
+        "name": "Strobe Shake"
+      },
+      "effectChain": [
+        {
+          "matchName": "ADBE Geometry2",
+          "displayName": "Transform",
+          "properties": [
+            {
+              "name": "Position",
+              "expression": "wiggle(18, 35)"
+            },
+            {
+              "name": "Rotation",
+              "expression": "wiggle(18, 5)"
+            }
+          ]
+        }
+      ],
+      "transformKeyframes": {
+        "Opacity": [
+          {
+            "timeOffset": 0,
+            "value": 100
+          },
+          {
+            "timeOffset": 0.05,
+            "value": 20
+          },
+          {
+            "timeOffset": 0.1,
+            "value": 100
+          },
+          {
+            "timeOffset": 0.15,
+            "value": 20
+          },
+          {
+            "timeOffset": 0.2,
+            "value": 100
+          },
+          {
+            "timeOffset": 0.25,
+            "value": 20
+          },
+          {
+            "timeOffset": 0.6,
+            "value": 100
+          }
+        ]
+      },
+      "version": "1.0.0",
+      "thumbnail": "assets/effects/strobe-shake/thumbnail.png",
+      "preview": "assets/effects/strobe-shake/preview.mp4",
+      "favorited": false,
+      "ffxPath": null
+    },
+    {
+      "id": "glitch-shake",
+      "name": "Glitch Shake",
+      "category": "Shakes",
+      "tags": [
+        "glitch",
+        "shake",
+        "crazy",
+        "hybrid",
+        "chaos"
+      ],
+      "description": "Shake and digital glitch hybrid - channel split plus a hard jitter for maximum chaos.",
+      "presetType": "scripted",
+      "adjustmentLayer": {
+        "durationSeconds": 0.5,
+        "name": "Glitch Shake"
+      },
+      "effectChain": [
+        {
+          "matchName": "ADBE Geometry2",
+          "displayName": "Transform",
+          "properties": [
+            {
+              "name": "Position",
+              "expression": "wiggle(16, 30)"
+            }
+          ]
+        },
+        {
+          "matchName": "ADBE Shift Channels",
+          "displayName": "Shift Channels",
+          "properties": [
+            {
+              "name": "Take Red From",
+              "value": 2
+            },
+            {
+              "name": "Take Blue From",
+              "value": 4
+            }
+          ]
+        }
+      ],
+      "version": "1.0.0",
+      "thumbnail": "assets/effects/glitch-shake/thumbnail.png",
+      "preview": "assets/effects/glitch-shake/preview.mp4",
+      "favorited": false,
+      "ffxPath": null
+    },
+    {
+      "id": "bass-hit",
+      "name": "Bass Hit",
+      "category": "Hits",
+      "tags": [
+        "hit",
+        "bass",
+        "impact",
+        "punch",
+        "flash"
+      ],
+      "description": "Big impact moment - zoom punch combined with a quick white flash, timed for a bass drop or hard hit.",
+      "presetType": "scripted",
+      "adjustmentLayer": {
+        "durationSeconds": 0.45,
+        "name": "Bass Hit"
+      },
+      "effectChain": [
+        {
+          "matchName": "ADBE Geometry2",
+          "displayName": "Transform",
+          "properties": [
+            {
+              "name": "Scale Height",
+              "keyframes": [
+                {
+                  "timeOffset": 0,
+                  "value": 100
+                },
+                {
+                  "timeOffset": 0.1,
+                  "value": 132
+                },
+                {
+                  "timeOffset": 0.45,
+                  "value": 100
+                }
+              ]
+            },
+            {
+              "name": "Scale Width",
+              "keyframes": [
+                {
+                  "timeOffset": 0,
+                  "value": 100
+                },
+                {
+                  "timeOffset": 0.1,
+                  "value": 132
+                },
+                {
+                  "timeOffset": 0.45,
+                  "value": 100
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "matchName": "ADBE Fill",
+          "displayName": "Fill",
+          "properties": [
+            {
+              "name": "Color",
+              "value": [
+                1,
+                1,
+                1
+              ]
+            },
+            {
+              "name": "Opacity",
+              "keyframes": [
+                {
+                  "timeOffset": 0,
+                  "value": 0
+                },
+                {
+                  "timeOffset": 0.04,
+                  "value": 55
+                },
+                {
+                  "timeOffset": 0.1,
+                  "value": 0
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "notes": "Uses Fill's OWN Opacity property (not the layer's master transform.Opacity) for the flash, specifically so the zoom punch - a separate effect on the same layer - keeps its full effect throughout. The layer's master Opacity scales the WHOLE effect stack uniformly, so using it for the flash would have also killed the zoom punch at the same moments.",
+      "version": "1.0.0",
+      "thumbnail": "assets/effects/bass-hit/thumbnail.png",
+      "preview": "assets/effects/bass-hit/preview.mp4",
+      "favorited": false,
+      "ffxPath": null
+    },
+    {
+      "id": "snare-hit",
+      "name": "Snare Hit",
+      "category": "Hits",
+      "tags": [
+        "hit",
+        "snare",
+        "impact",
+        "quick",
+        "flash"
+      ],
+      "description": "Smaller, snappier impact than Bass Hit - quick scale tick and a brief flash, for lighter percussive hits.",
+      "presetType": "scripted",
+      "adjustmentLayer": {
+        "durationSeconds": 0.25,
+        "name": "Snare Hit"
+      },
+      "effectChain": [
+        {
+          "matchName": "ADBE Geometry2",
+          "displayName": "Transform",
+          "properties": [
+            {
+              "name": "Scale Height",
+              "keyframes": [
+                {
+                  "timeOffset": 0,
+                  "value": 100
+                },
+                {
+                  "timeOffset": 0.05,
+                  "value": 115
+                },
+                {
+                  "timeOffset": 0.25,
+                  "value": 100
+                }
+              ]
+            },
+            {
+              "name": "Scale Width",
+              "keyframes": [
+                {
+                  "timeOffset": 0,
+                  "value": 100
+                },
+                {
+                  "timeOffset": 0.05,
+                  "value": 115
+                },
+                {
+                  "timeOffset": 0.25,
+                  "value": 100
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "matchName": "ADBE Fill",
+          "displayName": "Fill",
+          "properties": [
+            {
+              "name": "Color",
+              "value": [
+                1,
+                1,
+                1
+              ]
+            },
+            {
+              "name": "Opacity",
+              "keyframes": [
+                {
+                  "timeOffset": 0,
+                  "value": 0
+                },
+                {
+                  "timeOffset": 0.03,
+                  "value": 35
+                },
+                {
+                  "timeOffset": 0.07,
+                  "value": 0
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "version": "1.0.0",
+      "thumbnail": "assets/effects/snare-hit/thumbnail.png",
+      "preview": "assets/effects/snare-hit/preview.mp4",
+      "favorited": false,
+      "ffxPath": null
+    },
+    {
+      "id": "drop-hit",
+      "name": "Drop Hit",
+      "category": "Hits",
+      "tags": [
+        "hit",
+        "drop",
+        "impact",
+        "shake",
+        "big"
+      ],
+      "description": "The biggest hit in the category - large zoom punch plus a sharp shake burst, for the drop moment.",
+      "presetType": "scripted",
+      "adjustmentLayer": {
+        "durationSeconds": 0.5,
+        "name": "Drop Hit"
+      },
+      "effectChain": [
+        {
+          "matchName": "ADBE Geometry2",
+          "displayName": "Transform",
+          "properties": [
+            {
+              "name": "Scale Height",
+              "keyframes": [
+                {
+                  "timeOffset": 0,
+                  "value": 100
+                },
+                {
+                  "timeOffset": 0.1,
+                  "value": 150
+                },
+                {
+                  "timeOffset": 0.5,
+                  "value": 100
+                }
+              ]
+            },
+            {
+              "name": "Scale Width",
+              "keyframes": [
+                {
+                  "timeOffset": 0,
+                  "value": 100
+                },
+                {
+                  "timeOffset": 0.1,
+                  "value": 150
+                },
+                {
+                  "timeOffset": 0.5,
+                  "value": 100
+                }
+              ]
+            },
+            {
+              "name": "Position",
+              "expression": "wiggle(14, 22) * Math.max(0, 1 - (time - thisLayer.inPoint) / 0.25)"
+            }
+          ]
+        },
+        {
+          "matchName": "ADBE Fill",
+          "displayName": "Fill",
+          "properties": [
+            {
+              "name": "Color",
+              "value": [
+                1,
+                1,
+                1
+              ]
+            },
+            {
+              "name": "Opacity",
+              "keyframes": [
+                {
+                  "timeOffset": 0,
+                  "value": 0
+                },
+                {
+                  "timeOffset": 0.05,
+                  "value": 65
+                },
+                {
+                  "timeOffset": 0.12,
+                  "value": 0
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "notes": "Position expression decays the wiggle amplitude over the first 0.25s so the shake burst fades out rather than running the full duration at full strength.",
+      "version": "1.0.0",
+      "thumbnail": "assets/effects/drop-hit/thumbnail.png",
+      "preview": "assets/effects/drop-hit/preview.mp4",
+      "favorited": false,
+      "ffxPath": null
+    },
+    {
+      "id": "black-flash",
+      "name": "Black Flash",
+      "category": "Transitions",
+      "tags": [
+        "flash",
+        "transition",
+        "cut",
+        "black",
+        "impact"
+      ],
+      "description": "Hard black flash transition - punchier, darker cousin of White Flash.",
+      "presetType": "scripted",
+      "adjustmentLayer": {
+        "durationSeconds": 0.5,
+        "name": "Black Flash"
+      },
+      "effectChain": [
+        {
+          "matchName": "ADBE Fill",
+          "displayName": "Fill",
+          "properties": [
+            {
+              "name": "Color",
+              "value": [
+                0,
+                0,
+                0
+              ]
+            }
+          ]
+        }
+      ],
+      "transformKeyframes": {
+        "Opacity": [
+          {
+            "timeOffset": 0,
+            "value": 0
+          },
+          {
+            "timeOffset": 0.08,
+            "value": 100
+          },
+          {
+            "timeOffset": 0.5,
+            "value": 0
+          }
+        ]
+      },
+      "version": "1.0.0",
+      "thumbnail": "assets/effects/black-flash/thumbnail.png",
+      "preview": "assets/effects/black-flash/preview.mp4",
+      "favorited": false,
+      "ffxPath": null
+    },
+    {
+      "id": "rgb-flash",
+      "name": "RGB Flash",
+      "category": "Transitions",
+      "tags": [
+        "flash",
+        "transition",
+        "rgb",
+        "color",
+        "energetic"
+      ],
+      "description": "Rapid red-green-blue color flash cycle for a high-energy cut transition.",
+      "presetType": "scripted",
+      "adjustmentLayer": {
+        "durationSeconds": 0.6,
+        "name": "RGB Flash"
+      },
+      "effectChain": [
+        {
+          "matchName": "ADBE Fill",
+          "displayName": "Fill",
+          "properties": [
+            {
+              "name": "Color",
+              "keyframes": [
+                {
+                  "timeOffset": 0,
+                  "value": [
+                    1,
+                    0.1,
+                    0.1
+                  ]
+                },
+                {
+                  "timeOffset": 0.08,
+                  "value": [
+                    0.1,
+                    1,
+                    0.2
+                  ]
+                },
+                {
+                  "timeOffset": 0.16,
+                  "value": [
+                    0.2,
+                    0.4,
+                    1
+                  ]
+                },
+                {
+                  "timeOffset": 0.24,
+                  "value": [
+                    1,
+                    1,
+                    1
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "transformKeyframes": {
+        "Opacity": [
+          {
+            "timeOffset": 0,
+            "value": 0
+          },
+          {
+            "timeOffset": 0.03,
+            "value": 100
+          },
+          {
+            "timeOffset": 0.32,
+            "value": 100
+          },
+          {
+            "timeOffset": 0.6,
+            "value": 0
+          }
+        ]
+      },
+      "version": "1.0.0",
+      "thumbnail": "assets/effects/rgb-flash/thumbnail.png",
+      "preview": "assets/effects/rgb-flash/preview.mp4",
+      "favorited": false,
+      "ffxPath": null
+    },
+    {
+      "id": "blur-transition",
+      "name": "Blur Transition",
+      "category": "Transitions",
+      "tags": [
+        "blur",
+        "transition",
+        "smooth",
+        "wipe"
+      ],
+      "description": "Smooth blur pulse for a soft transition between shots.",
+      "presetType": "scripted",
+      "adjustmentLayer": {
+        "durationSeconds": 0.5,
+        "name": "Blur Transition"
+      },
+      "effectChain": [
+        {
+          "matchName": "ADBE Gaussian Blur 2",
+          "displayName": "Gaussian Blur",
+          "properties": [
+            {
+              "name": "Blurriness",
+              "keyframes": [
+                {
+                  "timeOffset": 0,
+                  "value": 0
+                },
+                {
+                  "timeOffset": 0.18,
+                  "value": 80
+                },
+                {
+                  "timeOffset": 0.5,
+                  "value": 0
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "version": "1.0.0",
+      "thumbnail": "assets/effects/blur-transition/thumbnail.png",
+      "preview": "assets/effects/blur-transition/preview.mp4",
+      "favorited": false,
+      "ffxPath": null
+    },
+    {
+      "id": "flash-pan",
+      "name": "Flash Pan",
+      "category": "Transitions",
+      "tags": [
+        "flash",
+        "pan",
+        "transition",
+        "combo"
+      ],
+      "description": "White flash combined with a quick directional pan - a punchier alternative to a plain flash cut.",
+      "presetType": "scripted",
+      "adjustmentLayer": {
+        "durationSeconds": 0.4,
+        "name": "Flash Pan"
+      },
+      "effectChain": [
+        {
+          "matchName": "ADBE Geometry2",
+          "displayName": "Transform",
+          "properties": [
+            {
+              "name": "Position",
+              "expression": "wiggle(2, thisComp.width*0.15)"
+            }
+          ]
+        },
+        {
+          "matchName": "ADBE Fill",
+          "displayName": "Fill",
+          "properties": [
+            {
+              "name": "Color",
+              "value": [
+                1,
+                1,
+                1
+              ]
+            },
+            {
+              "name": "Opacity",
+              "keyframes": [
+                {
+                  "timeOffset": 0,
+                  "value": 0
+                },
+                {
+                  "timeOffset": 0.08,
+                  "value": 100
+                },
+                {
+                  "timeOffset": 0.4,
+                  "value": 0
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "version": "1.0.0",
+      "thumbnail": "assets/effects/flash-pan/thumbnail.png",
+      "preview": "assets/effects/flash-pan/preview.mp4",
+      "favorited": false,
+      "ffxPath": null
+    },
+    {
+      "id": "glitch-cut",
+      "name": "Glitch Cut",
+      "category": "Transitions",
+      "tags": [
+        "glitch",
+        "cut",
+        "transition",
+        "noise",
+        "fast"
+      ],
+      "description": "Very short, sharp glitch burst for cutting between shots - noise and channel split with no flash.",
+      "presetType": "scripted",
+      "adjustmentLayer": {
+        "durationSeconds": 0.2,
+        "name": "Glitch Cut"
+      },
+      "effectChain": [
+        {
+          "matchName": "ADBE Noise",
+          "displayName": "Noise",
+          "properties": [
+            {
+              "name": "Amount of Noise",
+              "value": 0.35
+            }
+          ]
+        },
+        {
+          "matchName": "ADBE Shift Channels",
+          "displayName": "Shift Channels",
+          "properties": [
+            {
+              "name": "Take Red From",
+              "value": 2
+            },
+            {
+              "name": "Take Blue From",
+              "value": 4
+            }
+          ]
+        }
+      ],
+      "version": "1.0.0",
+      "thumbnail": "assets/effects/glitch-cut/thumbnail.png",
+      "preview": "assets/effects/glitch-cut/preview.mp4",
+      "favorited": false,
+      "ffxPath": null
+    },
+    {
+      "id": "zoom-transition",
+      "name": "Zoom Transition",
+      "category": "Transitions",
+      "tags": [
+        "zoom",
+        "transition",
+        "punch",
+        "scale"
+      ],
+      "description": "Quick punch-zoom transition - scale snaps up and settles back to normal.",
+      "presetType": "scripted",
+      "adjustmentLayer": {
+        "durationSeconds": 0.5,
+        "name": "Zoom Transition"
+      },
+      "effectChain": [
+        {
+          "matchName": "ADBE Geometry2",
+          "displayName": "Transform",
+          "properties": [
+            {
+              "name": "Scale Height",
+              "keyframes": [
+                {
+                  "timeOffset": 0,
+                  "value": 100
+                },
+                {
+                  "timeOffset": 0.12,
+                  "value": 180
+                },
+                {
+                  "timeOffset": 0.3,
+                  "value": 100
+                }
+              ]
+            },
+            {
+              "name": "Scale Width",
+              "keyframes": [
+                {
+                  "timeOffset": 0,
+                  "value": 100
+                },
+                {
+                  "timeOffset": 0.12,
+                  "value": 180
+                },
+                {
+                  "timeOffset": 0.3,
+                  "value": 100
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "version": "1.0.0",
+      "thumbnail": "assets/effects/zoom-transition/thumbnail.png",
+      "preview": "assets/effects/zoom-transition/preview.mp4",
+      "favorited": false,
+      "ffxPath": null
+    },
+    {
+      "id": "dirty-crt",
+      "name": "Dirty CRT",
+      "category": "CRT",
+      "tags": [
+        "crt",
+        "retro",
+        "grime",
+        "heavy",
+        "noise"
+      ],
+      "description": "Heavier, grimier CRT look - more grain and contrast crush than the base CRT TV preset.",
+      "presetType": "scripted",
+      "adjustmentLayer": {
+        "durationSeconds": 2,
+        "name": "Dirty CRT"
+      },
+      "effectChain": [
+        {
+          "matchName": "ADBE Brightness & Contrast 2",
+          "displayName": "Brightness & Contrast",
+          "properties": [
+            {
+              "name": "Brightness",
+              "value": -10
+            },
+            {
+              "name": "Contrast",
+              "value": 40
+            }
+          ]
+        },
+        {
+          "matchName": "ADBE HUE SATURATION",
+          "displayName": "Hue/Saturation",
+          "properties": [
+            {
+              "name": "Master Saturation",
+              "value": -55
+            },
+            {
+              "name": "Master Lightness",
+              "value": -10
+            }
+          ]
+        },
+        {
+          "matchName": "ADBE Noise",
+          "displayName": "Noise",
+          "properties": [
+            {
+              "name": "Amount of Noise",
+              "value": 0.16
+            }
+          ]
+        },
+        {
+          "matchName": "ADBE Tint",
+          "displayName": "Tint",
+          "properties": [
+            {
+              "name": "Amount to Tint",
+              "value": 35
+            }
+          ]
+        }
+      ],
+      "version": "1.0.0",
+      "thumbnail": "assets/effects/dirty-crt/thumbnail.png",
+      "preview": "assets/effects/dirty-crt/preview.mp4",
+      "favorited": false,
+      "ffxPath": null
+    },
+    {
+      "id": "vhs-crt",
+      "name": "VHS CRT",
+      "category": "CRT",
+      "tags": [
+        "vhs",
+        "crt",
+        "retro",
+        "tape",
+        "wobble"
+      ],
+      "description": "VHS tape wobble combined with a CRT color/grain treatment.",
+      "presetType": "scripted",
+      "adjustmentLayer": {
+        "durationSeconds": 2,
+        "name": "VHS CRT"
+      },
+      "effectChain": [
+        {
+          "matchName": "ADBE Wave Warp",
+          "displayName": "Wave Warp",
+          "properties": [
+            {
+              "name": "Wave Height",
+              "value": 3
+            },
+            {
+              "name": "Wave Width",
+              "value": 250
+            },
+            {
+              "name": "Direction",
+              "value": 90
+            }
+          ]
+        },
+        {
+          "matchName": "ADBE HUE SATURATION",
+          "displayName": "Hue/Saturation",
+          "properties": [
+            {
+              "name": "Master Saturation",
+              "value": -30
+            }
+          ]
+        },
+        {
+          "matchName": "ADBE Tint",
+          "displayName": "Tint",
+          "properties": [
+            {
+              "name": "Amount to Tint",
+              "value": 25
+            }
+          ]
+        },
+        {
+          "matchName": "ADBE Noise",
+          "displayName": "Noise",
+          "properties": [
+            {
+              "name": "Amount of Noise",
+              "value": 0.1
+            }
+          ]
+        }
+      ],
+      "version": "1.0.0",
+      "thumbnail": "assets/effects/vhs-crt/thumbnail.png",
+      "preview": "assets/effects/vhs-crt/preview.mp4",
+      "favorited": false,
+      "ffxPath": null
+    },
+    {
+      "id": "analog-damage",
+      "name": "Analog Damage",
+      "category": "CRT",
+      "tags": [
+        "analog",
+        "damage",
+        "tape",
+        "glitch",
+        "crt"
+      ],
+      "description": "Combined tape-damage look - wave warp wobble, channel split, and heavy noise.",
+      "presetType": "scripted",
+      "adjustmentLayer": {
+        "durationSeconds": 1.5,
+        "name": "Analog Damage"
+      },
+      "effectChain": [
+        {
+          "matchName": "ADBE Wave Warp",
+          "displayName": "Wave Warp",
+          "properties": [
+            {
+              "name": "Wave Height",
+              "value": 5
+            },
+            {
+              "name": "Wave Width",
+              "value": 180
+            },
+            {
+              "name": "Direction",
+              "value": 90
+            }
+          ]
+        },
+        {
+          "matchName": "ADBE Shift Channels",
+          "displayName": "Shift Channels",
+          "properties": [
+            {
+              "name": "Take Red From",
+              "value": 2
+            },
+            {
+              "name": "Take Blue From",
+              "value": 4
+            }
+          ]
+        },
+        {
+          "matchName": "ADBE Noise",
+          "displayName": "Noise",
+          "properties": [
+            {
+              "name": "Amount of Noise",
+              "value": 0.18
+            }
+          ]
+        }
+      ],
+      "version": "1.0.0",
+      "thumbnail": "assets/effects/analog-damage/thumbnail.png",
+      "preview": "assets/effects/analog-damage/preview.mp4",
+      "favorited": false,
+      "ffxPath": null
+    },
+    {
+      "id": "digital-glitch",
+      "name": "Digital Glitch",
+      "category": "Glitches",
+      "tags": [
+        "glitch",
+        "digital",
+        "block",
+        "posterize"
+      ],
+      "description": "Blocky digital corruption look - posterized color with a sharp positional jitter.",
+      "presetType": "scripted",
+      "adjustmentLayer": {
+        "durationSeconds": 0.5,
+        "name": "Digital Glitch"
+      },
+      "effectChain": [
+        {
+          "matchName": "ADBE Posterize",
+          "displayName": "Posterize",
+          "properties": [
+            {
+              "name": "Level",
+              "value": 6
+            }
+          ]
+        },
+        {
+          "matchName": "ADBE Geometry2",
+          "displayName": "Transform",
+          "properties": [
+            {
+              "name": "Position",
+              "expression": "wiggle(14, 10)"
+            }
+          ]
+        }
+      ],
+      "version": "1.0.0",
+      "thumbnail": "assets/effects/digital-glitch/thumbnail.png",
+      "preview": "assets/effects/digital-glitch/preview.mp4",
+      "favorited": false,
+      "ffxPath": null
+    },
+    {
+      "id": "signal-loss",
+      "name": "Signal Loss",
+      "category": "Glitches",
+      "tags": [
+        "signal",
+        "loss",
+        "flicker",
+        "static",
+        "broadcast"
+      ],
+      "description": "Flickering broadcast signal-loss look - rapid opacity flicker over heavy noise and crushed contrast.",
+      "presetType": "scripted",
+      "adjustmentLayer": {
+        "durationSeconds": 0.8,
+        "name": "Signal Loss"
+      },
+      "effectChain": [
+        {
+          "matchName": "ADBE Noise",
+          "displayName": "Noise",
+          "properties": [
+            {
+              "name": "Amount of Noise",
+              "value": 0.3
+            }
+          ]
+        },
+        {
+          "matchName": "ADBE Brightness & Contrast 2",
+          "displayName": "Brightness & Contrast",
+          "properties": [
+            {
+              "name": "Brightness",
+              "value": 0
+            },
+            {
+              "name": "Contrast",
+              "value": 50
+            }
+          ]
+        }
+      ],
+      "transformKeyframes": {
+        "Opacity": [
+          {
+            "timeOffset": 0,
+            "value": 100
+          },
+          {
+            "timeOffset": 0.08,
+            "value": 35
+          },
+          {
+            "timeOffset": 0.16,
+            "value": 100
+          },
+          {
+            "timeOffset": 0.24,
+            "value": 30
+          },
+          {
+            "timeOffset": 0.34,
+            "value": 100
+          },
+          {
+            "timeOffset": 0.42,
+            "value": 20
+          },
+          {
+            "timeOffset": 0.8,
+            "value": 100
+          }
+        ]
+      },
+      "version": "1.0.0",
+      "thumbnail": "assets/effects/signal-loss/thumbnail.png",
+      "preview": "assets/effects/signal-loss/preview.mp4",
+      "favorited": false,
+      "ffxPath": null
+    },
+    {
+      "id": "datamosh-style",
+      "name": "Datamosh Style",
+      "category": "Glitches",
+      "tags": [
+        "datamosh",
+        "stutter",
+        "compression",
+        "corrupt"
+      ],
+      "description": "Choppy, compression-artifact-style look approximating a datamosh stutter using frame-rate posterization and wave distortion.",
+      "presetType": "scripted",
+      "adjustmentLayer": {
+        "durationSeconds": 1,
+        "name": "Datamosh Style"
+      },
+      "effectChain": [
+        {
+          "matchName": "ADBE Posterize Time",
+          "displayName": "Posterize Time",
+          "properties": [
+            {
+              "name": "Frame Rate",
+              "value": 8
+            }
+          ]
+        },
+        {
+          "matchName": "ADBE Wave Warp",
+          "displayName": "Wave Warp",
+          "properties": [
+            {
+              "name": "Wave Height",
+              "value": 8
+            },
+            {
+              "name": "Wave Width",
+              "value": 100
+            }
+          ]
+        },
+        {
+          "matchName": "ADBE Shift Channels",
+          "displayName": "Shift Channels",
+          "properties": [
+            {
+              "name": "Take Red From",
+              "value": 2
+            }
+          ]
+        }
+      ],
+      "version": "1.0.0",
+      "thumbnail": "assets/effects/datamosh-style/thumbnail.png",
+      "preview": "assets/effects/datamosh-style/preview.mp4",
+      "favorited": false,
+      "ffxPath": null
+    },
+    {
+      "id": "blood-look",
+      "name": "Blood Look",
+      "category": "Color",
+      "tags": [
+        "blood",
+        "red",
+        "horror",
+        "intense",
+        "color grade"
+      ],
+      "description": "Intense red-pushed color grade with crushed blacks - horror/intensity aesthetic.",
+      "presetType": "scripted",
+      "adjustmentLayer": {
+        "durationSeconds": 2,
+        "name": "Blood Look"
+      },
+      "effectChain": [
+        {
+          "matchName": "ADBE Tint",
+          "displayName": "Tint",
+          "properties": [
+            {
+              "name": "Amount to Tint",
+              "value": 30
+            }
+          ]
+        },
+        {
+          "matchName": "ADBE Brightness & Contrast 2",
+          "displayName": "Brightness & Contrast",
+          "properties": [
+            {
+              "name": "Brightness",
+              "value": -5
+            },
+            {
+              "name": "Contrast",
+              "value": 25
+            }
+          ]
+        },
+        {
+          "matchName": "ADBE HUE SATURATION",
+          "displayName": "Hue/Saturation",
+          "properties": [
+            {
+              "name": "Master Saturation",
+              "value": 15
+            }
+          ]
+        }
+      ],
+      "version": "1.0.0",
+      "thumbnail": "assets/effects/blood-look/thumbnail.png",
+      "preview": "assets/effects/blood-look/preview.mp4",
+      "favorited": false,
+      "ffxPath": null
+    },
+    {
+      "id": "luxury-look",
+      "name": "Luxury Look",
+      "category": "Color",
+      "tags": [
+        "luxury",
+        "warm",
+        "cinematic",
+        "premium",
+        "color grade"
+      ],
+      "description": "Warm, soft-contrast premium grade with gently lifted highlights.",
+      "presetType": "scripted",
+      "adjustmentLayer": {
+        "durationSeconds": 2,
+        "name": "Luxury Look"
+      },
+      "effectChain": [
+        {
+          "matchName": "ADBE Color Balance (HLS)",
+          "displayName": "Color Balance (HLS)",
+          "properties": [
+            {
+              "name": "Hue",
+              "value": 35
+            },
+            {
+              "name": "Lightness",
+              "value": 6
+            },
+            {
+              "name": "Saturation",
+              "value": 5
+            }
+          ]
+        },
+        {
+          "matchName": "ADBE Brightness & Contrast 2",
+          "displayName": "Brightness & Contrast",
+          "properties": [
+            {
+              "name": "Brightness",
+              "value": 10
+            },
+            {
+              "name": "Contrast",
+              "value": -10
+            }
+          ]
+        },
+        {
+          "matchName": "ADBE HUE SATURATION",
+          "displayName": "Hue/Saturation",
+          "properties": [
+            {
+              "name": "Master Saturation",
+              "value": -5
+            }
+          ]
+        }
+      ],
+      "version": "1.0.0",
+      "thumbnail": "assets/effects/luxury-look/thumbnail.png",
+      "preview": "assets/effects/luxury-look/preview.mp4",
+      "favorited": false,
+      "ffxPath": null
+    },
+    {
+      "id": "dark-trap",
+      "name": "Dark Trap",
+      "category": "Color",
+      "tags": [
+        "dark",
+        "trap",
+        "moody",
+        "purple",
+        "color grade"
+      ],
+      "description": "Moody, desaturated trap-music aesthetic with crushed blacks and a cool purple/green shadow tint.",
+      "presetType": "scripted",
+      "adjustmentLayer": {
+        "durationSeconds": 2,
+        "name": "Dark Trap"
+      },
+      "effectChain": [
+        {
+          "matchName": "ADBE Color Balance (HLS)",
+          "displayName": "Color Balance (HLS)",
+          "properties": [
+            {
+              "name": "Hue",
+              "value": 280
+            },
+            {
+              "name": "Lightness",
+              "value": -14
+            },
+            {
+              "name": "Saturation",
+              "value": -15
+            }
+          ]
+        },
+        {
+          "matchName": "ADBE HUE SATURATION",
+          "displayName": "Hue/Saturation",
+          "properties": [
+            {
+              "name": "Master Saturation",
+              "value": -30
+            }
+          ]
+        },
+        {
+          "matchName": "ADBE Brightness & Contrast 2",
+          "displayName": "Brightness & Contrast",
+          "properties": [
+            {
+              "name": "Brightness",
+              "value": -15
+            },
+            {
+              "name": "Contrast",
+              "value": 30
+            }
+          ]
+        }
+      ],
+      "version": "1.0.0",
+      "thumbnail": "assets/effects/dark-trap/thumbnail.png",
+      "preview": "assets/effects/dark-trap/preview.mp4",
+      "favorited": false,
+      "ffxPath": null
+    },
+    {
+      "id": "random-bw-hits",
+      "name": "Random B&W Hits",
+      "category": "Black & White",
+      "tags": [
+        "random",
+        "black and white",
+        "flicker",
+        "glitch",
+        "hits"
+      ],
+      "description": "Punches brief black & white flashes into random short windows across your clip - a few random frames at a time, never the same pattern twice. Select a layer first.",
+      "presetType": "randomflicker",
+      "randomParams": {
+        "effectChain": [
+          {
+            "matchName": "ADBE HUE SATURATION",
+            "displayName": "Hue/Saturation",
+            "properties": [
+              {
+                "name": "Master Saturation",
+                "value": -100
+              }
+            ]
+          }
+        ],
+        "occurrences": 5,
+        "minDurationFrames": 2,
+        "maxDurationFrames": 6
+      },
+      "thumbnail": "assets/effects/random-bw-hits/thumbnail.png",
+      "preview": "assets/effects/random-bw-hits/preview.mp4",
+      "favorited": false,
+      "version": "1.0.0"
+    },
+    {
+      "id": "motion-blur-whip",
+      "name": "Motion Blur Whip",
+      "category": "Camera Movement",
+      "tags": [
+        "motion blur",
+        "directional blur",
+        "whip",
+        "keyframeable"
+      ],
+      "description": "Real directional motion blur (not a fake Gaussian pulse) snapping through a quick whip - Blur Length and Direction are both keyframed, so you can restyle the whole motion by hand.",
+      "presetType": "scripted",
+      "adjustmentLayer": {
+        "durationSeconds": 0.35,
+        "name": "Motion Blur Whip"
+      },
+      "effectChain": [
+        {
+          "matchName": "ADBE Motion Blur",
+          "displayName": "Directional Blur",
+          "properties": [
+            {
+              "name": "Direction",
+              "value": 90
+            },
+            {
+              "name": "Blur Length",
+              "keyframes": [
+                {
+                  "timeOffset": 0,
+                  "value": 0
+                },
+                {
+                  "timeOffset": 0.12,
+                  "value": 60
+                },
+                {
+                  "timeOffset": 0.35,
+                  "value": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "matchName": "ADBE Geometry2",
+          "displayName": "Transform",
+          "properties": [
+            {
+              "name": "Position",
+              "expression": "wiggle(2, thisComp.width*0.08)"
+            }
+          ]
+        }
+      ],
+      "thumbnail": "assets/effects/motion-blur-whip/thumbnail.png",
+      "preview": "assets/effects/motion-blur-whip/preview.mp4",
+      "favorited": false,
+      "version": "1.0.0"
+    },
+    {
+      "id": "crash-zoom-hard",
+      "name": "Crash Zoom Hard",
+      "category": "Zooms",
+      "tags": [
+        "crash zoom",
+        "hard",
+        "extreme",
+        "punch",
+        "blur"
+      ],
+      "description": "The hardest zoom in the library - a violent punch-in with real motion blur riding the curve, not just a scale snap.",
+      "presetType": "scripted",
+      "adjustmentLayer": {
+        "durationSeconds": 0.3,
+        "name": "Crash Zoom Hard"
+      },
+      "effectChain": [
+        {
+          "matchName": "ADBE Geometry2",
+          "displayName": "Transform",
+          "properties": [
+            {
+              "name": "Scale Height",
+              "keyframes": [
+                {
+                  "timeOffset": 0,
+                  "value": 100
+                },
+                {
+                  "timeOffset": 0.1,
+                  "value": 260
+                },
+                {
+                  "timeOffset": 0.3,
+                  "value": 100
+                }
+              ]
+            },
+            {
+              "name": "Scale Width",
+              "keyframes": [
+                {
+                  "timeOffset": 0,
+                  "value": 100
+                },
+                {
+                  "timeOffset": 0.1,
+                  "value": 260
+                },
+                {
+                  "timeOffset": 0.3,
+                  "value": 100
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "matchName": "ADBE Motion Blur",
+          "displayName": "Directional Blur",
+          "properties": [
+            {
+              "name": "Direction",
+              "value": 0
+            },
+            {
+              "name": "Blur Length",
+              "keyframes": [
+                {
+                  "timeOffset": 0,
+                  "value": 0
+                },
+                {
+                  "timeOffset": 0.1,
+                  "value": 40
+                },
+                {
+                  "timeOffset": 0.3,
+                  "value": 0
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "thumbnail": "assets/effects/crash-zoom-hard/thumbnail.png",
+      "preview": "assets/effects/crash-zoom-hard/preview.mp4",
+      "favorited": false,
+      "version": "1.0.0"
+    },
+    {
+      "id": "chroma-flash-hit",
+      "name": "Chroma Flash Hit",
+      "category": "Transitions",
+      "tags": [
+        "chroma",
+        "flash",
+        "rgb",
+        "blur",
+        "hit"
+      ],
+      "description": "RGB color-cycle flash with a motion-blur lead-in - hits harder than a plain flash cut.",
+      "presetType": "scripted",
+      "adjustmentLayer": {
+        "durationSeconds": 0.4,
+        "name": "Chroma Flash Hit"
+      },
+      "effectChain": [
+        {
+          "matchName": "ADBE Motion Blur",
+          "displayName": "Directional Blur",
+          "properties": [
+            {
+              "name": "Direction",
+              "value": 45
+            },
+            {
+              "name": "Blur Length",
+              "keyframes": [
+                {
+                  "timeOffset": 0,
+                  "value": 30
+                },
+                {
+                  "timeOffset": 0.1,
+                  "value": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "matchName": "ADBE Fill",
+          "displayName": "Fill",
+          "properties": [
+            {
+              "name": "Color",
+              "keyframes": [
+                {
+                  "timeOffset": 0.1,
+                  "value": [
+                    1,
+                    0.1,
+                    0.1
+                  ]
+                },
+                {
+                  "timeOffset": 0.15,
+                  "value": [
+                    0.1,
+                    1,
+                    0.2
+                  ]
+                },
+                {
+                  "timeOffset": 0.2,
+                  "value": [
+                    0.2,
+                    0.4,
+                    1
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Opacity",
+              "keyframes": [
+                {
+                  "timeOffset": 0.1,
+                  "value": 0
+                },
+                {
+                  "timeOffset": 0.13,
+                  "value": 100
+                },
+                {
+                  "timeOffset": 0.25,
+                  "value": 0
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "thumbnail": "assets/effects/chroma-flash-hit/thumbnail.png",
+      "preview": "assets/effects/chroma-flash-hit/preview.mp4",
+      "favorited": false,
+      "version": "1.0.0"
+    },
+    {
+      "id": "laggy-energy-shake",
+      "name": "Laggy Energy Shake",
+      "category": "Shakes",
+      "tags": [
+        "laggy",
+        "stutter",
+        "shake",
+        "energy",
+        "glitch"
+      ],
+      "description": "Shake combined with frame-rate posterization for that choppy, low-frame-rate energy look - feels broken on purpose.",
+      "presetType": "scripted",
+      "adjustmentLayer": {
+        "durationSeconds": 0.6,
+        "name": "Laggy Energy Shake"
+      },
+      "effectChain": [
+        {
+          "matchName": "ADBE Posterize Time",
+          "displayName": "Posterize Time",
+          "properties": [
+            {
+              "name": "Frame Rate",
+              "value": 10
+            }
+          ]
+        },
+        {
+          "matchName": "ADBE Geometry2",
+          "displayName": "Transform",
+          "properties": [
+            {
+              "name": "Position",
+              "expression": "wiggle(12, 16)"
+            }
+          ]
+        }
+      ],
+      "thumbnail": "assets/effects/laggy-energy-shake/thumbnail.png",
+      "preview": "assets/effects/laggy-energy-shake/preview.mp4",
+      "favorited": false,
+      "version": "1.0.0"
+    }
+  ]
+}

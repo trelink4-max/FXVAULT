@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>FXVault</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div id="app">
+
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-mark">FX</span>
+        <span class="brand-name">Vault</span>
+      </div>
+      <button id="settingsBtn" class="icon-btn" title="Settings" aria-label="Settings">⚙</button>
+    </header>
+
+    <div class="searchbar-row">
+      <input id="searchInput" type="text" placeholder="Search effects, tags, categories..." autocomplete="off" />
+      <span id="searchCount" class="search-count"></span>
+    </div>
+
+    <nav id="categoryChips" class="category-chips" aria-label="Categories">
+      <!-- populated by main.js -->
+    </nav>
+
+    <main id="libraryView" class="view active">
+      <div id="assetWarning" class="asset-warning hidden"></div>
+      <div id="effectGrid" class="effect-grid"></div>
+      <div id="emptyState" class="empty-state hidden">
+        <p>No effects match your search.</p>
+      </div>
+    </main>
+
+    <section id="settingsView" class="view">
+      <h2 class="view-title">Settings</h2>
+
+      <div class="setting-row">
+        <label for="setAutoplay">Autoplay previews</label>
+        <input type="checkbox" id="setAutoplay" />
+      </div>
+      <div class="setting-row">
+        <label for="setLoop">Loop previews</label>
+        <input type="checkbox" id="setLoop" />
+      </div>
+      <div class="setting-row">
+        <label for="setLogLevel">Log level</label>
+        <select id="setLogLevel">
+          <option value="debug">Debug</option>
+          <option value="info">Info</option>
+          <option value="warn">Warn</option>
+          <option value="error">Error</option>
+        </select>
+      </div>
+      <div class="setting-row">
+        <label for="setDuration">Adjustment layer duration override (seconds, blank = use preset default)</label>
+        <input type="number" id="setDuration" min="0" step="0.1" placeholder="default" />
+      </div>
+      <div class="setting-row">
+        <label for="setApplyMode">Apply mode</label>
+        <select id="setApplyMode">
+          <option value="keyframed">Keyframed (animated)</option>
+          <option value="constant">Constant (hold until clip ends)</option>
+        </select>
+      </div>
+
+      <p class="about-text">"Keyframed" plays the effect's built-in animation (flash pulses, shake wiggle, zoom punch) at its normal preset length. "Constant" holds the effect at a static value with no animation and stretches the adjustment layer to match the full length of whatever clip is selected when you apply - useful for things like a color grade or steady shake that should run the whole clip instead of a short burst. Select a layer in the timeline before double-clicking to use Constant mode; with nothing selected it falls back to the rest of the comp.</p>
+
+      <div class="setting-actions">
+        <button id="saveSettingsBtn" class="btn primary">Save settings</button>
+        <button id="validateAssetsBtn" class="btn">Re-run asset validation</button>
+        <button id="clearLogBtn" class="btn danger-outline">Clear error log</button>
+      </div>
+
+      <h3 class="view-subtitle">Library</h3>
+      <div class="setting-actions">
+        <button id="rescanLibraryBtn" class="btn">Rescan library</button>
+        <button id="runPreviewGenBtn" class="btn primary">Generate previews for pending effects</button>
+        <button id="importPresetBtn" class="btn primary">Import Preset (.ffx)</button>
+        <input type="file" id="importPresetInput" accept=".ffx" style="display:none" />
+      </div>
+      <p class="about-text">Rescan reloads data/effects-index.json without restarting AE. Generate previews requires the Phase 2 template project to be open - see tools/pending-presets/README.md. Import Preset copies a real, already-exported .ffx file straight into the library - it gets a placeholder thumbnail until you run it through the Preview Generator (or render one manually), but it's immediately searchable, categorized, and double-click-applicable via AE's native applyPreset().</p>
+
+      <h3 class="view-subtitle">Error log <span id="logCount" class="muted-count"></span></h3>
+      <div id="logViewer" class="log-viewer"></div>
+
+      <h3 class="view-subtitle">Updates</h3>
+      <div class="setting-actions">
+        <button id="checkUpdateBtn" class="btn primary">Check for Updates</button>
+        <button id="applyUpdateBtn" class="btn primary">Update Now</button>
+        <button id="openRepoBtn" class="btn">Open FXVAULT repo</button>
+      </div>
+      <p class="about-text" id="updateStatusText">Not checked yet this session.</p>
+      <p class="about-text">"Update Now" downloads and applies code changes directly - no zip, no reinstall. It does NOT touch your favorites, settings, or preview videos/thumbnails. After it finishes, close and reopen the FXVault panel (Window &gt; Extensions) for the changes to take effect - or fully restart After Effects if a release note mentions the manifest changed.</p>
+
+      <h3 class="view-subtitle">About</h3>
+      <p class="about-text" id="aboutText"></p>
+    </section>
+
+    <nav class="tabbar">
+      <button class="tab-btn active" data-tab="library" data-view="libraryView">Library</button>
+      <button class="tab-btn" data-tab="favorites" data-view="libraryView">Favorites</button>
+      <button class="tab-btn" data-tab="settings" data-view="settingsView">Settings</button>
+    </nav>
+
+  </div>
+
+  <script src="js/CSInterface.js"></script>
+  <script src="js/logger.js"></script>
+  <script src="js/db.js"></script>
+  <script src="js/search.js"></script>
+  <script src="js/settings.js"></script>
+  <script src="js/updater.js"></script>
+  <script src="js/autoupdater.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
