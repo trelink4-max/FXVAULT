@@ -1,5 +1,5 @@
 {
-  "currentVersion": "0.5.0-phase2",
+  "currentVersion": "0.5.1-phase2",
   "schemaVersions": {
     "effectsIndex": 1,
     "favorites": 1,
@@ -8,14 +8,14 @@
   },
   "history": [
     {
-      "version": "0.5.0-phase2",
+      "version": "0.5.1-phase2",
       "date": "2026-06-23",
-      "notes": "5 new effects: Random B&W Hits (new presetType randomflicker - punches a look into random short time windows across a clip), Motion Blur Whip + Crash Zoom Hard (real keyframeable Directional Blur via confirmed ADBE Motion Blur matchName), Chroma Flash Hit, Laggy Energy Shake. 55 effects total."
+      "notes": "Fixed error log viewer - it was capturing detailed context (which file failed, why, etc) but never displaying it. Now shows the full detail under each log line."
     },
     {
-      "version": "0.4.0-phase2",
+      "version": "0.5.0-phase2",
       "date": "2026-06-23",
-      "notes": "All 36 pending presets went live (50 effects, 12 categories)."
+      "notes": "5 new effects: Random B&W Hits, Motion Blur Whip, Crash Zoom Hard, Chroma Flash Hit, Laggy Energy Shake. 55 effects total."
     }
   ]
 }

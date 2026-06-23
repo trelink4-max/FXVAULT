@@ -355,6 +355,7 @@
     entries.slice(0, 200).forEach(function (entry) {
       var row = document.createElement("div");
       row.className = "log-entry";
+      row.style.flexWrap = "wrap";
       var time = document.createElement("span");
       time.className = "log-time";
       time.textContent = entry.timestamp.substr(11, 8);
@@ -367,6 +368,22 @@
       row.appendChild(time);
       row.appendChild(level);
       row.appendChild(msg);
+
+      if (entry.context !== null && entry.context !== undefined) {
+        var detail = document.createElement("div");
+        detail.style.width = "100%";
+        detail.style.color = "#9A9AA3";
+        detail.style.fontSize = "10.5px";
+        detail.style.paddingLeft = "60px";
+        detail.style.wordBreak = "break-word";
+        try {
+          detail.textContent = typeof entry.context === "string" ? entry.context : JSON.stringify(entry.context);
+        } catch (e) {
+          detail.textContent = String(entry.context);
+        }
+        row.appendChild(detail);
+      }
+
       els.logViewer.appendChild(row);
     });
   }
