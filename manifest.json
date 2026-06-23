@@ -1,13 +1,9 @@
 {
-  "generatedFor": "0.5.2-phase2",
+  "generatedFor": "0.5.3-phase2",
   "files": [
     {
       "path": "CSXS/manifest.xml",
       "url": "https://raw.githubusercontent.com/trelink4-max/FXVAULT/main/CSXS/manifest.xml"
-    },
-    {
-      "path": "README.md",
-      "url": "https://raw.githubusercontent.com/trelink4-max/FXVAULT/main/README.md"
     },
     {
       "path": "css/style.css",

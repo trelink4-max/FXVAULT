@@ -1,5 +1,5 @@
 {
-  "currentVersion": "0.5.2-phase2",
+  "currentVersion": "0.5.3-phase2",
   "schemaVersions": {
     "effectsIndex": 1,
     "favorites": 1,
@@ -8,19 +8,14 @@
   },
   "history": [
     {
+      "version": "0.5.3-phase2",
+      "date": "2026-06-23",
+      "notes": "Likely real fix for 'updated files but panel still shows old code': index.html never had cache-busting on its script tags, so Chromium could serve the old cached JS even after reopening the panel. All script/css tags now have a version query string that changes every release, forcing a real fresh load."
+    },
+    {
       "version": "0.5.2-phase2",
       "date": "2026-06-23",
-      "notes": "Fixed About text - it referenced window.__fxVersionInfo, a global that was never actually set anywhere, so it always showed a hardcoded stale fallback regardless of real version. Now reads data/version.json directly and also shows live effect/category counts."
-    },
-    {
-      "version": "0.5.1-phase2",
-      "date": "2026-06-23",
-      "notes": "Fixed error log viewer to show context detail, not just the headline message."
-    },
-    {
-      "version": "0.5.0-phase2",
-      "date": "2026-06-23",
-      "notes": "5 new effects: Random B&W Hits, Motion Blur Whip, Crash Zoom Hard, Chroma Flash Hit, Laggy Energy Shake."
+      "notes": "Fixed About text reading a never-set global."
     }
   ]
 }
