@@ -1,0 +1,31 @@
+{
+  "currentVersion": "0.4.0-phase2",
+  "schemaVersions": {
+    "effectsIndex": 1,
+    "favorites": 1,
+    "settings": 1,
+    "errorLog": 1
+  },
+  "history": [
+    {
+      "version": "0.4.0-phase2",
+      "date": "2026-06-23",
+      "notes": "50 effects across 12 categories, all live with real previews."
+    },
+    {
+      "version": "0.3.0-phase2",
+      "date": "2026-06-23",
+      "notes": "Library expansion: 36 new presets, timeremap presetType (Reverse + Speed Ramps), Apply Mode setting."
+    },
+    {
+      "version": "0.2.0-phase2",
+      "date": "2026-06-22",
+      "notes": "Preview Generator built."
+    },
+    {
+      "version": "0.1.0-phase1",
+      "date": "2026-06-22",
+      "notes": "Phase 1 engine complete."
+    }
+  ]
+}
